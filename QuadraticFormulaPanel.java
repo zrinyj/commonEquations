@@ -68,8 +68,9 @@ public class QuadraticFormulaPanel extends JPanel
 			public void keyTyped(KeyEvent key) 
 			{
 				//if it is not a number, a negative sign
-				if((key.getKeyChar() <= '0' || key.getKeyChar() >= '9') 
-						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE)
+				if((key.getKeyChar() < '0' || key.getKeyChar() > '9') 
+						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE
+						&& key.getKeyChar() != '.')
 				{
 					xSquaredTextField.setForeground(Color.red);
 				}
@@ -90,8 +91,9 @@ public class QuadraticFormulaPanel extends JPanel
 		{
 			public void keyTyped(KeyEvent key) 
 			{
-				if((key.getKeyChar() <= '0' || key.getKeyChar() >= '9') 
-						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE)
+				if((key.getKeyChar() < '0' || key.getKeyChar() > '9') 
+						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE
+						&& key.getKeyChar() != '.')
 				{
 					xTextField.setForeground(Color.red);
 				}
@@ -110,8 +112,9 @@ public class QuadraticFormulaPanel extends JPanel
 		{
 			public void keyTyped(KeyEvent key) 
 			{
-				if((key.getKeyChar() <= '0' || key.getKeyChar() >= '9') 
-						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE)
+				if((key.getKeyChar() < '0' || key.getKeyChar() > '9') 
+						&& key.getKeyChar() != '-' && key.getKeyCode() != KeyEvent.VK_BACK_SPACE
+						&& key.getKeyChar() != '.')
 				{
 					cTextField.setForeground(Color.red);
 				}

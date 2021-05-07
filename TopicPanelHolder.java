@@ -26,11 +26,11 @@ public class TopicPanelHolder extends JPanel
 		
 		derivativePanel = new DerivativePanel();
 		
-		hubbleConstantPanel = new HubbleConstantPanel();
+		hubbleConstantPanel = new HubblePanel();
 		
 		//add to this panel with specific short names
 		this.add(startPanel, "blank");
-		this.add(quadraticFormulaPanel, "quadradticFormula");
+		this.add(quadraticFormulaPanel, "quadraticFormula");
 		this.add(distanceFormulaPanel, "distanceFormula");
 		this.add(derivativePanel, "derivative");
 		this.add(hubbleConstantPanel, "hubbleConstant");

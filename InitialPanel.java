@@ -30,7 +30,7 @@ public class InitialPanel extends JPanel
 		largeFont = new Font("Times New Roman", Font.PLAIN, 48);
 		smallFont = new Font("Times New Roman", Font.PLAIN, 32);
 		
-		//Initialize the title jlabel and its design
+		//Initialize the title label and its design
 		lblTitle = new JLabel("Common Equations");
 		lblTitle.setAlignmentX(CENTER_ALIGNMENT);
 		lblTitle.setAlignmentY(CENTER_ALIGNMENT);

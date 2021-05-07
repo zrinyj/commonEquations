@@ -28,7 +28,7 @@ public class PreAlgebra
 		Double subtractOutcome = 0.0;
 		
 		//Real Numbers
-		if(((b*b) - 4 * a * c) >= 0)
+		if((Math.pow(b, 2) - 4 * a * c) >= 0.0)
 		{
 			addOutcome = (-b + Math.sqrt((b*b) - (4 * a * c))) / (2 * a);
 			subtractOutcome = (-b - Math.sqrt((b*b) - (4 * a * c))) / (2 * a);
@@ -48,6 +48,7 @@ public class PreAlgebra
 	//Find the distance between two points. I should add a GraphPoint function as well
 	public double distanceFormula(double x1, double y1, double x2, double y2)
 	{
+		System.out.println(Math.pow(x2 - x1, 2) + " - " + Math.pow(y2 - y1, 2) + " = " + Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
