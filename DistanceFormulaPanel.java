@@ -43,11 +43,14 @@ public class DistanceFormulaPanel extends JPanel
 	
 	DistanceFormulaPanel()
 	{		
+		//Prealgebra class to find the answers
 		preAlgebra = new PreAlgebra();
 		
+		//set fonts for other components to use
 		largeFont = new Font("Times New Roman", Font.PLAIN, 32);
 		smallFont = new Font("Times New Roman", Font.PLAIN, 24);
 		
+		//title label
 		lblTitle = new JLabel("Distance Formula");
 		lblTitle.setFont(largeFont);
 		
@@ -56,6 +59,7 @@ public class DistanceFormulaPanel extends JPanel
 		lblHowToUse.setFont(smallFont);
 		lblHowToUse.setOpaque(false);
 		
+		//x1 position
 		x1 = new JTextField(20);
 		x1.setMinimumSize(new Dimension(80,25));
 		x1.addKeyListener(new KeyAdapter()
@@ -75,6 +79,7 @@ public class DistanceFormulaPanel extends JPanel
 			}		
 		});
 		
+		//y1 position
 		y1 = new JTextField(20);
 		y1.setMinimumSize(new Dimension(80,25));
 		y1.addKeyListener(new KeyAdapter()
@@ -94,6 +99,7 @@ public class DistanceFormulaPanel extends JPanel
 			}		
 		});
 		
+		//x2 position
 		x2 = new JTextField(20);
 		x2.setMinimumSize(new Dimension(80,25));
 		x2.addKeyListener(new KeyAdapter()
@@ -113,6 +119,7 @@ public class DistanceFormulaPanel extends JPanel
 			}		
 		});
 		
+		//y2 position
 		y2 = new JTextField(20);
 		y2.setMinimumSize(new Dimension(80,25));
 		y2.addKeyListener(new KeyAdapter()
@@ -132,6 +139,7 @@ public class DistanceFormulaPanel extends JPanel
 			}		
 		});
 		
+		//To better the look and design
 		leftParenthesis = new JTextArea("       (");
 		leftParenthesis.setOpaque(false);
 		leftParenthesis.setFont(smallFont);
@@ -156,9 +164,12 @@ public class DistanceFormulaPanel extends JPanel
 		rightParenthesis1.setOpaque(false);
 		rightParenthesis1.setFont(smallFont);
 		
+		//label for the answer
 		lblAnswer = new JLabel();
 		lblAnswer.setFont(smallFont);
 		
+		//btnCalculate calls a function to make sure each text field is good then calls a function
+		//to solve
 		btnCalculate = new JButton("Calculate");
 		btnCalculate.setFont(smallFont);
 		btnCalculate.addActionListener((event) -> 
@@ -186,6 +197,7 @@ public class DistanceFormulaPanel extends JPanel
 		this.add(btnCalculate);
 	}
 	
+	//check for blank textfields then solve
 	public double solve(String x1Value, String y1Value, String x2Value, String y2Value)
 	{
 		double x1Double, y1Double, x2Double, y2Double;
@@ -229,6 +241,7 @@ public class DistanceFormulaPanel extends JPanel
 		return preAlgebra.distanceFormula(x1Double, y1Double, x2Double, y2Double);
 	}
 	
+	//check that none of the textfields contain bad data
 	public boolean check()
 	{
 		if(x1.getForeground() != Color.red)

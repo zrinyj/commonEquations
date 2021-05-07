@@ -19,6 +19,7 @@ public class HubblePanel extends JPanel implements ActionListener
 	
 	HubblePanel()
 	{
+		//JPanel to switch between different hubble variables
 		bLay = new BorderLayout();
 		this.setLayout(bLay);
 		
@@ -26,6 +27,7 @@ public class HubblePanel extends JPanel implements ActionListener
 		hubbleList[0] = "Recessional Distance";
 		hubbleList[1] = "Recessional Velocity";
 		
+		//combo box to switch between the two
 		hubbleComboBox = new JComboBox<String>(hubbleList);
 		hubbleComboBox.setEditable(false);
 		hubbleComboBox.addActionListener(this);
@@ -36,6 +38,7 @@ public class HubblePanel extends JPanel implements ActionListener
 		this.add(hubbleHolder, bLay.CENTER);
 	}
 	
+	//When combo box is clicked this switches between the panels
 	public void actionPerformed(ActionEvent e)
 	{
 		if(hubbleComboBox.getSelectedItem().equals(hubbleList[0]))

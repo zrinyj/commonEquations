@@ -11,6 +11,8 @@ private CardLayout cLay = null;
 	
 	HubblePanelHolder()
 	{
+		//Holds both the distance and velocity hubble panel and has methods to 
+		//switch in between the two
 		cLay = new CardLayout();
 		this.setLayout(cLay);
 		

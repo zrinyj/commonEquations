@@ -30,11 +30,14 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 	
 	HubbleRecessionalVelocity()
 	{
+		//initialize astronmy for its hubble functions
 		astronomy = new Astronomy();
 		
+		//initialize font for component usage
 		largeFont = new Font("Times New Roman", Font.PLAIN, 32);
 		smallFont = new Font("Times New Roman", Font.PLAIN, 24);
 		
+		//initialize componenets and design
 		lblTitle = new JLabel("Hubble's Constant for Velocity");
 		lblTitle.setFont(largeFont);
 		
@@ -46,6 +49,7 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 		hubblesConstant.setOpaque(false);
 		hubblesConstant.setFont(smallFont);
 		
+		//if the user types a letter the font will turn red to signify an incorrect character
 		userDistance = new JTextField(20);
 		userDistance.setMinimumSize(new Dimension(60, 35));
 		userDistance.addKeyListener(new KeyAdapter()
@@ -65,6 +69,7 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 			}		
 		});
 		
+		//action listener calls actionPeformed when the button is clicked
 		btnCalculate = new JButton("Calculate");
 		btnCalculate.setFont(smallFont);
 		btnCalculate.addActionListener(this);
@@ -82,6 +87,7 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 	
 	public void actionPerformed(ActionEvent e) 
 	{
+		//checks for bad input data then solves
 		if(check())
 		{
 			solve();
@@ -90,6 +96,7 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 	
 	public boolean check()
 	{
+		//if userDistance contains a letter it will be red
 		if(userDistance.getForeground() != Color.red)
 		{
 			return true;
@@ -103,7 +110,8 @@ public class HubbleRecessionalVelocity extends JPanel  implements ActionListener
 	
 	public void solve()
 	{
-		Double velocity = astronomy.hubblesConstantRecessionalVelocity(Double.parseDouble(userDistance.getText()));
+		Double velocity = astronomy.hubblesConstantRecessionalVelocity(
+				Double.parseDouble(userDistance.getText()));
 		lblAnswer.setText(velocity.toString() + "km/s");
 	}
 

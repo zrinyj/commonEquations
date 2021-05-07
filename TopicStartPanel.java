@@ -10,6 +10,7 @@ public class TopicStartPanel extends JPanel
 	
 	TopicStartPanel()
 	{
+		//Starting panel to instruct the user on what to use
 		largeFont = new Font("Times New Roman", Font.PLAIN, 32);
 		lblHowToUse = new JTextArea("Choose a page from the navigation\n "
 				+ "above to get started");

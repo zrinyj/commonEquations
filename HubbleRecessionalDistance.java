@@ -30,11 +30,14 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 	
 	HubbleRecessionalDistance()
 	{
+		//Initialize astronomy for its hubble functions
 		astronomy = new Astronomy();
 		
+		//initialize font for component use
 		largeFont = new Font("Times New Roman", Font.PLAIN, 32);
 		smallFont = new Font("Times New Roman", Font.PLAIN, 24);
 		
+		//initialize each component and design 
 		lblTitle = new JLabel("Hubble's Constant for Distance");
 		lblTitle.setFont(largeFont);
 		
@@ -46,6 +49,7 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 		hubblesConstant.setOpaque(false);
 		hubblesConstant.setFont(smallFont);
 		
+		//add a keylistener for bad data (key) inputs
 		userVelocity = new JTextField(20);
 		userVelocity.setMinimumSize(new Dimension(60, 35));
 		userVelocity.addKeyListener(new KeyAdapter()
@@ -65,6 +69,7 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 			}		
 		});
 		
+		//action listener calls actionPerformed method when clicked
 		btnCalculate = new JButton("Calculate");
 		btnCalculate.setFont(smallFont);
 		btnCalculate.addActionListener(this);
@@ -83,6 +88,7 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 	
 	public void actionPerformed(ActionEvent e) 
 	{
+		//checks for bad input data then solves
 		if(check())
 		{
 			solve();
@@ -92,6 +98,7 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 	
 	public boolean check()
 	{
+		//if uservelocity contains a letter it will be red
 		if(userVelocity.getForeground() != Color.red)
 		{
 			return true;
@@ -105,7 +112,8 @@ public class HubbleRecessionalDistance extends JPanel implements ActionListener
 	
 	public void solve()
 	{
-		Double distance = astronomy.hubblesConstantRecessionalDistance(Double.parseDouble(userVelocity.getText()));
+		Double distance = astronomy.hubblesConstantRecessionalDistance(
+				Double.parseDouble(userVelocity.getText()));
 		lblAnswer.setText(distance.toString() + "Mpc");
 	}
 
